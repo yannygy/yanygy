@@ -1,14 +1,7 @@
-<!DOCTYPE html>
-<html lang="id">
+<!DOCTYPE html><html lang="id">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>YANN YGY STORE</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-<style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>YANN YGY STORE</title><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"><style>
 
 *{
 margin:0;
@@ -65,8 +58,6 @@ background:
 radial-gradient(circle at center,#081326,#000);
 }
 
-/* STARS */
-
 .stars{
 position:absolute;
 inset:0;
@@ -91,18 +82,16 @@ transform:translateY(100vh);
 }
 }
 
-/* NEBULA */
-
 .nebula{
 position:absolute;
 border-radius:50%;
 filter:blur(80px);
-opacity:.35;
+opacity:.25;
 }
 
 .nebula1{
-width:400px;
-height:400px;
+width:350px;
+height:350px;
 background:#00aaff;
 top:-100px;
 left:-100px;
@@ -110,8 +99,8 @@ animation:moveNebula 8s infinite alternate;
 }
 
 .nebula2{
-width:500px;
-height:500px;
+width:450px;
+height:450px;
 background:#6a00ff;
 bottom:-150px;
 right:-150px;
@@ -126,8 +115,6 @@ to{
 transform:translate(50px,-30px);
 }
 }
-
-/* METEOR */
 
 .meteor{
 position:absolute;
@@ -144,15 +131,11 @@ animation:meteorMove 3s linear infinite;
 @keyframes meteorMove{
 from{
 left:-300px;
-top:20%;
 }
 to{
 left:120%;
-top:60%;
 }
 }
-
-/* ROCKET */
 
 .rocket{
 position:absolute;
@@ -172,8 +155,6 @@ bottom:120%;
 }
 }
 
-/* INTRO CONTENT */
-
 .intro-content{
 position:relative;
 z-index:10;
@@ -184,11 +165,6 @@ font-size:3rem;
 text-shadow:
 0 0 10px #00aaff,
 0 0 30px #00aaff;
-}
-
-.intro-content p{
-margin-top:10px;
-color:#ddd;
 }
 
 .enter-btn{
@@ -208,8 +184,8 @@ min-height:100vh;
 
 background:
 linear-gradient(
-rgba(0,0,0,.65),
-rgba(0,0,0,.65)
+rgba(0,0,0,.70),
+rgba(0,0,0,.70)
 ),
 url('https://files.catbox.moe/hfwrix.png');
 
@@ -218,7 +194,7 @@ background-position:center;
 background-attachment:fixed;
 }
 
-/* HAMBURGER */
+/* MENU */
 
 .burger{
 position:fixed;
@@ -238,8 +214,6 @@ z-index:99999;
 .hidden{
 display:none!important;
 }
-
-/* SIDE MENU */
 
 .side-menu{
 position:fixed;
@@ -288,21 +262,22 @@ padding:40px 20px;
 }
 
 .card{
-width:260px;
+width:280px;
 background:#111;
 border-radius:15px;
 overflow:hidden;
 border:1px solid #222;
 }
 
-.card img{
-width:100%;
-height:170px;
-object-fit:cover;
-}
-
 .content{
 padding:15px;
+}
+
+.price{
+margin-top:10px;
+font-size:20px;
+font-weight:bold;
+color:#00ff88;
 }
 
 .btn{
@@ -315,7 +290,42 @@ cursor:pointer;
 font-weight:bold;
 }
 
-/* POPUP */
+/* GOIB CARD */
+
+.id-banner{
+height:180px;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+font-weight:bold;
+}
+
+.k4{
+background:#0066ff;
+}
+
+.k5{
+background:#00aa55;
+}
+
+.k6{
+background:#c7a000;
+}
+
+.k7{
+background:#c70000;
+}
+
+.page{
+display:none;
+}
+
+.page-title{
+text-align:center;
+padding-top:30px;
+font-size:28px;
+}
 
 .popup{
 display:none;
@@ -346,142 +356,198 @@ cursor:pointer;
 
 @media(max-width:768px){
 
-.products{
-flex-direction:column;
-align-items:center;
-}
-
 .card{
 width:90%;
 }
 
 }
 
-</style>
+</style></head>
 
-</head>
-<body>
+<body><!-- LOADING --><div id="loading"><div class="loader"></div>
 
-<!-- LOADING -->
-<div id="loading">
+<h2 style="margin-top:20px;">
+    YANN YGY STORE
+</h2>
 
-    <div class="loader"></div>
+</div><!-- HAMBURGER --><div class="burger hidden"
+id="burger"
+onclick="toggleMenu()">☰
 
-    <h2 style="margin-top:20px;">
+</div><!-- MENU --><div class="side-menu"
+id="sideMenu"><a href="#"
+onclick="goHome()">
+    🏠 Home
+</a>
+
+<a href="#"
+onclick="pilihProduk()">
+    🛒 Produk
+</a>
+
+<a href="https://wa.me/62882001163626"
+target="_blank">
+    💬 Hubungi Admin
+</a>
+
+</div><!-- INTRO --><section id="intro"><div class="stars"
+id="stars"></div>
+
+<div class="nebula nebula1"></div>
+<div class="nebula nebula2"></div>
+
+<div class="meteor"></div>
+
+<div class="rocket">
+    🚀
+</div>
+
+<div class="intro-content">
+
+    <h1>
+        YANN YGY STORE
+    </h1>
+
+    <p id="welcomeText">
+        Welcome To Galaxy Store
+    </p>
+
+    <button
+    class="enter-btn"
+    onclick="enterStore()">
+
+        ENTER STORE
+
+    </button>
+
+</div>
+
+</section><!-- WEBSITE --><div id="website"><section class="welcome">
+
+    <h1>
+        WELCOME TO WEBSITE
+    </h1>
+
+    <h2>
         YANN YGY STORE
     </h2>
 
-    <p style="margin-top:10px;">
-        Memuat Sistem...
-    </p>
+    <p style="
+    margin-top:15px;
+    max-width:800px;
+    margin-left:auto;
+    margin-right:auto;
+    padding:0 20px;
+    line-height:1.8;
+    font-size:16px;
+">
+    Disini kami menyediakan berbagai produk seperti akun Free Fire dan ID Free Fire Goib.
 
-</div>
+    <br><br>
 
-<!-- HAMBURGER -->
-<div class="burger hidden" id="burger" onclick="toggleMenu()">
-☰
-</div>
+    Jika ingin melihat produknya,
+    silahkan klik tombol menu di pojok kiri atas.
+</p>
 
-<!-- MENU -->
-<div class="side-menu" id="sideMenu">
+</section>
 
-    <a href="#" onclick="goHome()">
-        🏠 Home
-    </a>
+<!-- HALAMAN FREE FIRE -->
 
-    <a href="#" onclick="pilihProduk()">
-        🛒 Produk
-    </a>
+<section id="halamanFF"
+class="page">
 
-    <a href="https://wa.me/62882001163626?text=Min%20mau%20lapor%20website%20ada%20kendala"
-       target="_blank">
-        💬 Hubungi Admin
-    </a>
+    <h2 class="page-title">
+        🎮 STOK AKUN FREE FIRE
+    </h2>
 
-</div>
+    <div class="products">
 
-<!-- INTRO -->
-<section id="intro">
+        <!-- PRODUK FF -->
 
-    <!-- STARS -->
-    <div class="stars" id="stars"></div>
+        <div class="card">
 
-    <!-- NEBULA -->
-    <div class="nebula nebula1"></div>
-    <div class="nebula nebula2"></div>
+            <img
+            src="https://files.catbox.moe/gcdmhk.jpg"
+            style="
+            width:100%;
+            height:200px;
+            object-fit:cover;">
 
-    <!-- METEOR -->
-    <div class="meteor"></div>
+            <div class="content">
 
-    <!-- ROCKET -->
-    <div class="rocket">
-        🚀
-    </div>
+                <h3>
+                    STOK FF POLOSAN
+                </h3>
 
-    <!-- CONTENT -->
-    <div class="intro-content">
+                <p>
 
-        <h1>
-            YANN YGY STORE
-        </h1>
+                    Akun Polosan
 
-        <p id="welcomeText">
-            Welcome To Galaxy Store
-        </p>
+                    <br>✅ Super Void
+                    <br>✅ Super Fusion
+                    <br>✅ Super Pixel HTTPS
+                    <br>✅ Hayato
+                    <br>✅ Login Google
+                    <br>✅ Bind Kosong
 
-        <button class="enter-btn" onclick="enterStore()">
-            ENTER STORE
-        </button>
+                </p>
+
+                <div class="price">
+                    Rp 60.000
+                </div>
+
+                <button
+                class="btn"
+                onclick="buyProduk('STOK FF POLOSAN Rp 60.000')">
+
+                    BELI SEKARANG
+
+                </button>
+
+            </div>
+
+        </div>
 
     </div>
 
 </section>
 
-<!-- WEBSITE -->
-<div id="website">
+<!-- HALAMAN GOIB -->
 
-    <!-- WELCOME -->
-    <section class="welcome">
+<section id="halamanGoib"
+class="page">
 
-        <h1>
-            WELCOME TO WEBSITE
-        </h1>
+    <h2 class="page-title">
+        👑 STOK ID FREE FIRE GOIB
+    </h2>
 
-        <h2>
-            YANN YGY STORE
-        </h2>
+    <div class="products">
 
-        <p style="margin-top:10px;">
-            Trusted Digital Store
-        </p>
+        <div class="card">
 
-    </section>
+            <div class="id-banner k4">
 
-    <!-- PRODUCTS -->
-    <section class="products">
+                <h3>
+                    ID FREE FIRE GOIB
+                </h3>
 
-        <!-- FREE FIRE -->
-        <div class="card" id="ffPolosan">
+                <h2>
+                    KEMBAR 4
+                </h2>
 
-            <img
-            src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800"
-            alt="Free Fire">
+            </div>
 
             <div class="content">
 
-                <h3>
-                    STOK AKUN FREE FIRE
-                </h3>
-
-                <p>
-                    Akun siap main dan siap pakai.
-                </p>
+                <div class="price">
+                    Rp 5.000
+                </div>
 
                 <button
                 class="btn"
-                onclick="buyPolosan()">
+                onclick="bukaKembar4()">
 
-                    BELI SEKARANG
+                    LIHAT ID
 
                 </button>
 
@@ -489,28 +555,31 @@ width:90%;
 
         </div>
 
-        <!-- FREE FIRE GOIB -->
-        <div class="card" id="ffGoib">
+        <div class="card">
 
-            <img
-            src="https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800"
-            alt="Free Fire Goib">
+            <div class="id-banner k4">
+
+                <h3>
+                    ID FREE FIRE GOIB
+                </h3>
+
+                <h2>
+                    KEMBAR 4 PILIHAN
+                </h2>
+
+            </div>
 
             <div class="content">
 
-                <h3>
-                    STOK ID FREE FIRE GOIB
-                </h3>
-
-                <p>
-                    ID pilihan dan siap digunakan.
-                </p>
+                <div class="price">
+                    Rp 15.000
+                </div>
 
                 <button
                 class="btn"
-                onclick="buyGoib()">
+                onclick="bukaKembar4Pilihan()">
 
-                    BELI SEKARANG
+                    LIHAT ID
 
                 </button>
 
@@ -518,38 +587,163 @@ width:90%;
 
         </div>
 
-    </section>
+        <div class="card">
 
-</div>
+            <div class="id-banner k5">
 
-<!-- POPUP PRODUK -->
-<div class="popup" id="produkPopup">
+                <h3>
+                    ID FREE FIRE GOIB
+                </h3>
 
-    <div class="popup-box">
+                <h2>
+                    KEMBAR 5
+                </h2>
 
-        <h2>
-            Pilih Produk
-        </h2>
+            </div>
 
-        <button onclick="bukaPolosan()">
-            🎮 STOK AKUN FREE FIRE
-        </button>
+            <div class="content">
 
-        <button onclick="bukaGoib()">
-            👑 STOK ID FREE FIRE GOIB
-        </button>
+                <div class="price">
+                    Rp 25.000
+                </div>
 
-        <button onclick="tutupPopup()">
-            ❌ BATAL
-        </button>
+                <button
+                class="btn"
+                onclick="bukaKembar5()">
+
+                    LIHAT ID
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="card">
+
+            <div class="id-banner k6">
+
+                <h3>
+                    ID FREE FIRE GOIB
+                </h3>
+
+                <h2>
+                    PREMIUM 5-6
+                </h2>
+
+            </div>
+
+            <div class="content">
+
+                <div class="price">
+                    Rp 35.000
+                </div>
+
+                <button
+                class="btn"
+                onclick="bukaPremium()">
+
+                    LIHAT ID
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="card">
+
+            <div class="id-banner k7">
+
+                <h3>
+                    ID FREE FIRE GOIB
+                </h3>
+
+                <h2>
+                    KEMBAR 7
+                </h2>
+
+            </div>
+
+            <div class="content">
+
+                <div class="price">
+                    Rp 45.000
+                </div>
+
+                <button
+                class="btn"
+                onclick="bukaKembar7()">
+
+                    LIHAT ID
+
+                </button>
+
+            </div>
+
+        </div>
 
     </div>
+
+</section>
+
+<!-- HALAMAN DAFTAR ID -->
+
+<section
+id="halamanID"
+class="page">
+
+    <h2
+    id="judulID"
+    class="page-title">
+
+        DAFTAR ID
+
+    </h2>
+
+    <div
+    class="products"
+    id="listID">
+
+    </div>
+
+</section>
+
+</div><!-- POPUP --><div class="popup"
+id="produkPopup"><div class="popup-box">
+
+    <h2>
+        Pilih Produk
+    </h2>
+
+    <button
+    onclick="bukaPolosan()">
+
+        🎮 STOK AKUN FREE FIRE
+
+    </button>
+
+    <button
+    onclick="bukaGoib()">
+
+        👑 STOK ID FREE FIRE GOIB
+
+    </button>
+
+    <button
+    onclick="tutupPopup()">
+
+        ❌ BATAL
+
+    </button>
+
+</div>
 
 </div>
 
 <script>
 
-/* LOADING */
+/* LOADING CEPAT */
 
 window.onload = function(){
 
@@ -557,21 +751,21 @@ window.onload = function(){
 
         document.getElementById("loading").style.display = "none";
 
-    },2000);
+    },500);
 
 };
 
-/* TEKS INTRO */
+/* INTRO TEXT */
 
 const messages = [
-    "Welcome To Galaxy Store 🚀",
-    "Trusted Digital Store ✨",
-    "Temukan akun terbaik hari ini 🔥",
-    "Selamat Berbelanja 👋"
+"Welcome To Galaxy Store 🚀",
+"Trusted Digital Store ✨",
+"Temukan akun terbaik hari ini 🔥",
+"Selamat Berbelanja 👋"
 ];
 
 document.getElementById("welcomeText").innerText =
-messages[Math.floor(Math.random() * messages.length)];
+messages[Math.floor(Math.random()*messages.length)];
 
 /* BINTANG */
 
@@ -580,21 +774,21 @@ document.getElementById("stars");
 
 for(let i=0;i<100;i++){
 
-    let star =
-    document.createElement("div");
+let star =
+document.createElement("div");
 
-    star.className = "star";
+star.className = "star";
 
-    star.style.left =
-    Math.random() * 100 + "vw";
+star.style.left =
+Math.random()*100+"vw";
 
-    star.style.top =
-    Math.random() * 100 + "vh";
+star.style.top =
+Math.random()*100+"vh";
 
-    star.style.animationDuration =
-    (Math.random() * 5 + 3) + "s";
+star.style.animationDuration =
+(Math.random()*5+3)+"s";
 
-    starsContainer.appendChild(star);
+starsContainer.appendChild(star);
 
 }
 
@@ -602,133 +796,579 @@ for(let i=0;i<100;i++){
 
 function enterStore(){
 
-    document.getElementById("intro")
-    .style.display = "none";
+document.getElementById("intro")
+.style.display="none";
 
-    document.getElementById("website")
-    .style.display = "block";
+document.getElementById("website")
+.style.display="block";
 
-    document.getElementById("burger")
-    .classList.remove("hidden");
+document.getElementById("burger")
+.classList.remove("hidden");
 
 }
 
-/* HAMBURGER */
+/* MENU */
 
 function toggleMenu(){
 
-    const menu =
-    document.getElementById("sideMenu");
+const menu =
+document.getElementById("sideMenu");
 
-    menu.style.left =
-    menu.style.left === "0px"
-    ? "-260px"
-    : "0px";
+menu.style.left =
+menu.style.left==="0px"
+? "-260px"
+: "0px";
 
 }
-
-/* HOME */
 
 function goHome(){
 
-    document.getElementById("sideMenu")
-    .style.left = "-260px";
+document.getElementById("sideMenu")
+.style.left="-260px";
 
-    window.scrollTo({
-        top:0,
-        behavior:"smooth"
-    });
+document.querySelectorAll(".page")
+.forEach(el=>el.style.display="none");
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
 
 }
 
-/* POPUP PRODUK */
+/* POPUP */
 
 function pilihProduk(){
 
-    document.getElementById("sideMenu")
-    .style.left = "-260px";
+document.getElementById("sideMenu")
+.style.left="-260px";
 
-    document.getElementById("produkPopup")
-    .style.display = "flex";
+document.getElementById("produkPopup")
+.style.display="flex";
 
 }
 
 function tutupPopup(){
 
-    document.getElementById("produkPopup")
-    .style.display = "none";
+document.getElementById("produkPopup")
+.style.display="none";
 
 }
 
-/* PRODUK FF */
+/* HALAMAN FF */
 
 function bukaPolosan(){
 
-    tutupPopup();
+tutupPopup();
 
-    document.getElementById("ffPolosan")
-    .scrollIntoView({
-        behavior:"smooth",
-        block:"center"
-    });
+document.querySelectorAll(".page")
+.forEach(el=>el.style.display="none");
+
+document.getElementById("halamanFF")
+.style.display="block";
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
 
 }
 
-/* PRODUK FF GOIB */
+/* HALAMAN GOIB */
 
 function bukaGoib(){
 
-    tutupPopup();
+tutupPopup();
 
-    document.getElementById("ffGoib")
-    .scrollIntoView({
-        behavior:"smooth",
-        block:"center"
-    });
+document.querySelectorAll(".page")
+.forEach(el=>el.style.display="none");
 
-}
+document.getElementById("halamanGoib")
+.style.display="block";
 
-/* BELI FF */
-
-function buyPolosan(){
-
-    const nomor =
-    "62882001163626";
-
-    const pesan =
-    "Min saya mau beli stok akun free fire";
-
-    window.open(
-        "https://wa.me/" +
-        nomor +
-        "?text=" +
-        encodeURIComponent(pesan),
-        "_blank"
-    );
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
 
 }
 
-/* BELI FF GOIB */
+/* WHATSAPP */
 
-function buyGoib(){
+function buyProduk(nama){
 
-    const nomor =
-    "62882001163626";
+const nomor =
+"62882001163626";
 
-    const pesan =
-    "Min saya mau beli stok id free fire goib";
+const pesan =
+"Min saya mau beli : "+nama;
 
-    window.open(
-        "https://wa.me/" +
-        nomor +
-        "?text=" +
-        encodeURIComponent(pesan),
-        "_blank"
-    );
+window.open(
+"https://wa.me/"+nomor+
+"?text="+encodeURIComponent(pesan),
+"_blank"
+);
+
+}
+
+/* GENERATOR ID */
+
+function tampilkanID(
+judul,
+harga,
+data
+){
+
+document.querySelectorAll(".page")
+.forEach(el=>el.style.display="none");
+
+document.getElementById("halamanID")
+.style.display="block";
+
+document.getElementById("judulID")
+.innerText = judul;
+
+const list =
+document.getElementById("listID");
+
+list.innerHTML="";
+
+data.forEach(id=>{
+
+list.innerHTML += `
+
+<div class="card">
+
+<div class="id-banner k7">
+
+<h3>ID FREE FIRE GOIB</h3>
+
+<h2>${id}</h2>
+
+</div>
+
+<div class="content">
+
+<div class="price">
+${harga}
+</div>
+
+<button
+class="btn"
+onclick="buyProduk(
+'ID ${id} - ${harga}'
+)">
+
+BELI SEKARANG
+
+</button>
+
+</div>
+
+</div>
+
+`;
+
+});
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
+}
+
+/* KEMBAR 4 */
+
+const dataKembar4 = [
+
+"16111484719",
+"16120500302",
+"16077914778",
+"16111615962",
+"16096672256",
+"16133119210",
+"16121117882",
+"16111469951",
+"16137668846",
+"16125555936",
+"16075120100",
+"16111951320",
+"16111523416",
+"16086140626",
+"16118139103",
+"16117773785",
+"16126202664",
+"16136664008",
+"16084001888",
+"16076776612",
+"16083887820",
+"16070060363",
+"16111697601",
+"16111891848",
+"16083533382",
+"16126227207",
+"16111454216",
+"16121156417",
+"16126222865",
+"16133358873",
+"16072701779",
+"16077727939",
+"16084028887",
+"16111527222",
+"16072800306",
+"16076076649",
+"16110000391",
+"16086631647",
+"16111809160",
+"16085009999",
+"16133343564",
+"16126686971",
+"16111104866",
+"16097058050",
+"16070207055",
+"16071589111",
+"16070566693",
+"16136692906",
+"16084460044",
+"16092995222"
+
+];
+
+function bukaKembar4(){
+
+tampilkanID(
+"ID KEMBAR 4",
+"Rp 5.000",
+dataKembar4
+);
+
+}
+
+/* KEMBAR 4 PILIHAN */
+
+const dataKembar4Pilihan = [
+
+"16111919360",
+"16112105107",
+"16111381722",
+"16085518858",
+"16070087780",
+"16126101221",
+"16090020995",
+"16138112901",
+"16084889698",
+"16086762760",
+"16076475177",
+"16078008898",
+"16119929902",
+"16085690999",
+"16111557100",
+"16086388348",
+"16084774666",
+"16131833359",
+"16118117558",
+"16077875079",
+"16085667657",
+"16086927665",
+"16111319994",
+"16132262182",
+"16090072037",
+"16080886608",
+"16111537261",
+"16096671467",
+"16111352319",
+"16111158356",
+"16111473219",
+"16069563062",
+"16086617690",
+"16108899299",
+"16086566591",
+"16121118200",
+"16117214106",
+"16084482788",
+"16135552853",
+"16126227332",
+"16086601064",
+"16139110190",
+"16086577966",
+"16077100480",
+"16083887778",
+"16069846658",
+"16077207070",
+"16138900111",
+"16138118167",
+"16111023871"
+
+];
+
+function bukaKembar4Pilihan(){
+
+tampilkanID(
+"ID KEMBAR 4 PILIHAN",
+"Rp 15.000",
+dataKembar4Pilihan
+);
+
+}
+
+/* LANJUT DATA KEMBAR 5,
+PREMIUM,
+DAN KEMBAR 7
+DI PART BERIKUTNYA */
+
+
+/* =========================
+   KEMBAR 5 REGULER
+========================= */
+
+const dataKembar5 = [
+
+"16097671777",
+"16111814186",
+"16086968686",
+"16111158501",
+"16098000078",
+"16111421133",
+"16111121904",
+"16121119164",
+"16083988878",
+"16099497919",
+"16097779787",
+"16110006700",
+"16127222281",
+"16073265666",
+"16077623777",
+"16111136810",
+"16136676608",
+"16069993929",
+"16081000830",
+"16077678747",
+"16111153512",
+"16111311467",
+"16132883888",
+"16083343033",
+"16111186361",
+"16090370200",
+"16111431361",
+"16099492599",
+"16111919180",
+"16086178888",
+"16126665976",
+"16136696675",
+"16111911562",
+"16137335353",
+"16111319561",
+"16111961194",
+"16111322711",
+"16111907171",
+"16111811475",
+"16072661660",
+"16086633686",
+"16070177772",
+"16069686568",
+"16118121831",
+"16111581351",
+"16086666421",
+"16111015615",
+"16119112451",
+"16136688636",
+"16111841141"
+
+];
+
+function bukaKembar5(){
+
+tampilkanID(
+"ID KEMBAR 5 REGULER",
+"Rp 25.000",
+dataKembar5
+);
+
+}
+
+/* =========================
+   PREMIUM KEMBAR 5-6
+========================= */
+
+const dataPremium = [
+
+"16069533333",
+"16069555855",
+"16075659555",
+"16075798777",
+"16075927777",
+"16076001666",
+"16076005666",
+"16076243666",
+"16076284666",
+"16076339333",
+"16076506000",
+"16076536566",
+"16076562166",
+"16076565266",
+"16076675366",
+"16076006666",
+"16077607777",
+"16077677776",
+"16077741777",
+"16077777789",
+"16077778077",
+"16080930000",
+"16084000008",
+"16084444344",
+"16084464444",
+"16084544444",
+"16096156666",
+"16096299999",
+"16096386666",
+"16097772777"
+
+];
+
+function bukaPremium(){
+
+tampilkanID(
+"ID PREMIUM KEMBAR 5-6",
+"Rp 35.000",
+dataPremium
+);
+
+}
+
+/* =========================
+   KEMBAR 7
+========================= */
+
+const dataKembar7 = [
+
+"16090000090",
+"16111111190",
+"16111511191",
+"16086665666",
+"16111118118",
+"16111411611",
+"16077777707",
+"16111181011",
+"16111311191",
+"16077773777",
+"16111111215",
+"16118171111",
+"16111111132",
+"16111119112",
+"16111181311",
+"16125555555",
+"16118131111",
+"16111911161",
+"16136666660",
+"16111191151",
+"16125222222",
+"16112115111",
+"16096666626",
+"16111101116",
+"16121117111",
+"16111311101",
+"16111131511",
+"16111141141",
+"16096676666",
+"16111811811",
+"16118111911",
+"16111611151"
+
+];
+
+function bukaKembar7(){
+
+tampilkanID(
+"ID FREE FIRE GOIB KEMBAR 7",
+"Rp 45.000",
+dataKembar7
+);
+
+}
+
+/* =========================
+   WARNA OTOMATIS
+========================= */
+
+/*
+Ganti bagian:
+
+<div class="id-banner k7">
+
+Menjadi:
+
+<div class="id-banner">
+
+Lalu ganti fungsi tampilkanID()
+agar warna mengikuti kategori.
+*/
+
+function tampilkanID(
+judul,
+harga,
+data
+){
+
+document.querySelectorAll(".page")
+.forEach(el=>el.style.display="none");
+
+document.getElementById("halamanID")
+.style.display="block";
+
+document.getElementById("judulID")
+.innerText = judul;
+
+const list =
+document.getElementById("listID");
+
+list.innerHTML = "";
+
+let warna = "k4";
+
+if(harga==="Rp 25.000") warna="k5";
+if(harga==="Rp 35.000") warna="k6";
+if(harga==="Rp 45.000") warna="k7";
+
+data.forEach(id=>{
+
+list.innerHTML += `
+
+<div class="card">
+
+<div class="id-banner ${warna}">
+
+<h3>ID FREE FIRE GOIB</h3>
+
+<h2>${id}</h2>
+
+</div>
+
+<div class="content">
+
+<div class="price">
+${harga}
+</div>
+
+<button
+class="btn"
+onclick="buyProduk('ID ${id} - ${harga}')">
+
+BELI SEKARANG
+
+</button>
+
+</div>
+
+</div>
+
+`;
+
+});
 
 }
 
 </script>
 
 </body>
-  </html>
+</html>
